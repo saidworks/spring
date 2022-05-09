@@ -1,8 +1,0 @@
-package com.perscholas.controller;
-
-public class CreateUserTable {
-	public static void main(String[] args) {
-		SessionFactory factory = factory new Configuration().configure().buildSessionFactory();
-		
-	}
-}
