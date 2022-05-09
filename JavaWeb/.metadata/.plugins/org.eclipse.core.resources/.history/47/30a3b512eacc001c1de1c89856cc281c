@@ -1,0 +1,13 @@
+package com.perscholas.JEE;
+
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
+
+public class TestSystem {
+	private static EntityManagerFactory ENTITY_MANAGER_FACTORY = Persistence.createEntityManagerFactory("JEE");
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

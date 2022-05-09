@@ -1,0 +1,31 @@
+package com.perscholas.JEE;
+
+import java.io.Serializable;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+
+@Entity 
+@Table(name = "customer")
+public class Customer implements Serializable{
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	
+	@Id
+	@Column(name = "custID", unique=true)
+	private int id;
+	
+	@Column(name = "firstName", nullable=false)
+	private String fName;
+	
+	@Column(name = "lastName", unique=false)
+	private String lName;
+//	auto increment@GeneratedValue(Strategy = GeneratedType.AUTO)
+	
+	
+
+}
