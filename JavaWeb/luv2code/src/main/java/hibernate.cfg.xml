@@ -10,7 +10,8 @@
 <property name="connection.username">saidlearns</property>
 <property name="connection.password">mysql</property>
     <!-- Maria DB dialect -->
-<property name="dialect">org.hibernate.dialect.MySQLDialect</property>
+<property name="dialect">org.hibernate.dialect.MySQL5Dialect</property>
+<!-- property name="dialect">org.hibernate.dialect.MySQL5Dialect</property-->
   <!-- Echo all executed SQL to stdout -->
    <property name="hibernate.show_sql" >true </property>
    <property name="hibernate.format_sql" >true </property>
