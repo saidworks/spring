@@ -22,7 +22,7 @@ public class Department implements Serializable {
 	private int id;
 	@Column(name="dept_name")
 	private String name;
-	@OneToMany(mappedBy="department",cascade = CascadeType.ALL)
+	@OneToMany(mappedBy="department",cascade = CascadeType.MERGE)
 	private List<Teacher> teacher;
 	public Department() {
 		// TODO Auto-generated constructor stub

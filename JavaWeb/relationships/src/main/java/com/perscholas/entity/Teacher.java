@@ -27,23 +27,24 @@ public class Teacher implements Serializable {
 	@Column(name="teacher_name")
 	private String name;
 	
+	 @ManyToOne(cascade=CascadeType.MERGE, targetEntity=Department.class)
+	 @JoinColumn(name = "dept_id")
+	 private Department department;
 	public Teacher(int tId, String salary, String name) {
 		super();
 		this.tId = tId;
 		this.salary = salary;
-		name = name;
+		this.name = name;
 	}
 	
 	public Teacher( String salary, String name) {
 		super();
 		this.salary = salary;
-		name = name;
+		this.name = name;
 	}
 	
 	
-	 @ManyToOne(cascade=CascadeType.ALL, targetEntity=Department.class)
-	 @JoinColumn(name = "dept_id")
-	 private Department department;
+	
 	public Teacher() {
 		// TODO Auto-generated constructor stub
 	}
@@ -63,7 +64,7 @@ public class Teacher implements Serializable {
 		return name;
 	}
 	public void setname(String name) {
-		name = name;
+		this.name = name;
 	}
 	public Department getDepartment() {
 		return department;

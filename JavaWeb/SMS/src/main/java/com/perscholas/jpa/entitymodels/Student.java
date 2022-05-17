@@ -3,6 +3,7 @@ package com.perscholas.jpa.entitymodels;
 import java.util.List;
 
 import javax.persistence.CascadeType;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
@@ -11,8 +12,11 @@ import javax.persistence.OneToMany;
 @Entity
 public class Student {
 	@Id
+	@Column(name="email")
 	private String sEmail;
+	@Column(name="name")
 	private String sName;
+	@Column(name="password")
 	private String sPass;
 	
 	@OneToMany(cascade=CascadeType.ALL)

@@ -22,19 +22,22 @@ public class App {
 		TeacherDAO teacherImp = new TeacherDAOImp();
 		DepartmentDAO deptImp = new DepartmentDAOImp();
 	
-//		Department department2 = new Department("Painting");
-//		deptImp.add(department2);
-		
+//		Department artDept = new Department("Arts");
+//		deptImp.add(artDept);
+		Department litDept = session.get(Department.class,2);
+		Department artDept = session.get(Department.class,5);
 		Teacher teacher1 = session.get(Teacher.class,2);
-		Department department1 = session.get(Department.class,4);
-		teacher1.setDepartment(department1);
-		session.close();
-		
-		
-		System.out.println(teacher1.getDepartment().getname());
-		teacherImp.update(2, teacher1);
+		teacher1.setDepartment(litDept);
 	
-		teacherImp.add(teacher1);
+		
+		
 
+		teacherImp.update(2, teacher1);
+		Teacher artTeacher = new Teacher();
+		artTeacher.setname("Said Artist");
+		artTeacher.setSalary("75000");
+		artTeacher.setDepartment(artDept);
+		teacherImp.add(artTeacher);
+		session.close();
 	}
 }
