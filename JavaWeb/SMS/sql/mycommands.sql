@@ -1,5 +1,5 @@
 -- CREATE DATABASE sms;
--- use SMS;
+ use SMS;
 -- DROP TABLE IF EXISTS course,student;
 
 
@@ -25,4 +25,6 @@
 -- insert into Course (id, name, instructor) values (8, 'Data Structures', 'Carolan Stoller');
 -- insert into Course (id, name, instructor) values (9, 'Politics', 'Carmita De Maine');
 -- insert into Course (id, name, instructor) values (10, 'Art', 'Kingsly Doxsey');
-
+-- testing the registerStudentCourse method with an entry  
+-- INSERT INTO student_course (Student_email,sCourses_id) VALUES("sbowden1@yellowbook.com",3);
+-- TRUNCATE student_course;

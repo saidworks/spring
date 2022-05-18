@@ -16,11 +16,12 @@
 	   	<property name="hibernate.show_sql">true </property>
 	   	<property name="hibernate.format_sql">true </property>
 	   	<!-- JDBC connection pool settings ... using built-in test pool -->
-        <property name="connection.pool_size">1</property>
+        <property name="connection.pool_size">100</property>
 	   	
 		<!-- Entity Mapping -->
 		<mapping class="com.perscholas.jpa.entitymodels.Student"/> 
       	<mapping class="com.perscholas.jpa.entitymodels.Course"/> 
+      	<mapping class="com.perscholas.jpa.entitymodels.StudentCourse"/> 
 
 
 
