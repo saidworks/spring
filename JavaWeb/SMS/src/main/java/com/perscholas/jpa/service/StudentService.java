@@ -82,7 +82,6 @@ public class StudentService implements StudentDAO {
 			   throw e;
 		}
 		session.close();
-		session.close();
 		return false;
 	}
 
@@ -103,7 +102,7 @@ public class StudentService implements StudentDAO {
 			session.save(sc);
 		}
 		else {
-			System.out.println(" Already registered to the");
+			System.out.println(" Already registered to this course");
 		}
 			
 		t.commit();

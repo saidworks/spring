@@ -21,10 +21,19 @@ public class CourseService implements CourseDAO{
 	public List<Course> getAllCourses() {
 		
 		Session session = factory.openSession();
-		String hql = "FROM course";
+		String hql = "FROM Course";
 		Query<Course> query = session.createQuery(hql);
 		List<Course> courses = query.getResultList();
 		return courses;
 	}
-
+//	public static void main(String[] args) {
+//	CourseService cs = new CourseService();
+//
+//
+//	List<Course> availableCourses = 	cs.getAllCourses();;
+//	System.out.println("Please choose from the following courses and type number corresponding to the course: ");
+//	for(Course c:availableCourses) {
+//		System.out.printf("%30s %1s %30s %1s %30s\n",c.getcId(),'|',c.getcName(),'|', c.getcInstructorName());
+//	}
+//	}
 }
