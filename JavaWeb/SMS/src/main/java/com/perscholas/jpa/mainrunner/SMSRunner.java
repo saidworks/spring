@@ -69,8 +69,9 @@ public class SMSRunner {
 				st = stService.getStudentByEmail(email);
 				System.out.println("Welcome, " + st.getsName());
 				List<Course> stCourses = stService.getStudentCourses(email);
+				System.out.println("You are registered to : ");
+				System.out.printf("%30s %1s %30s %1s %30s\n","Course ID",'|',"Course Name",'|', "Course Instructor");
 				for(Course c:stCourses) {
-					System.out.println("You are registered to : ");
 					System.out.printf("%30s %1s %30s %1s %30s\n",c.getcId(),'|',c.getcName(),'|', c.getcInstructorName());
 				}
 
