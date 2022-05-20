@@ -1,5 +1,7 @@
 package com.perscholas.jpa.entitymodels;
 
+import java.io.Serializable;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -8,7 +10,11 @@ import javax.persistence.Id;
 
 
 @Entity
-public class Course {
+public class Course implements Serializable {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name="id")
@@ -50,5 +56,16 @@ public class Course {
 	public String toString() {
 		return "Course [cId=" + cId + ", cName=" + cName + ", cInstructorName=" + cInstructorName + "]";
 	}
+	@Override
+	 public boolean equals(Object object) {
+	    	if(object instanceof Course) {
+	    		Course c = (Course) object;
+	    		if(cId == c.getcId()  && cName.equals(c.getcName()) 
+	    				&& cInstructorName.equals(c.getcInstructorName())) {
+	    					return true;
+	    		}
+	    	}
+	    	return false;
+	    }
 
 }
