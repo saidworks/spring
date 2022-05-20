@@ -4,7 +4,7 @@ This app allow students to manage their courses registration after they login wi
 
 before running the app please:
 
-1.  Create a database with name "sms"
+1.  Create a database with name "sms" using your RDBMS
 
 2.  In the hibernate.cfg.xml file please
     a. Modify the user, password with your RDBMS user and password
@@ -19,4 +19,5 @@ before running the app please:
     > Student.sql
     > Course.sql
 
-5.  Please start the app by running the SMSRunner class from Eclipse Project Explorer.
+5.  Please start the app by running the SMSRunner class from Eclipse Project Explorer:
+    /SMS/src/main/java/com/perscholas/jpa/mainrunner/SMSRunner.java
