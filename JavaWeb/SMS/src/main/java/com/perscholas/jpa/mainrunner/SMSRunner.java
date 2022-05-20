@@ -62,6 +62,7 @@ public class SMSRunner {
 			String email = scan.next().trim();
 			System.out.println("Enter your password");
 			String password = scan.next().trim();
+			try {
 			if(stService.validateStudent(email, password)) {
 				/*			If the credentials are valid, the student is logged in and all the classes the Student is registered to should be displayed. Displays and prompt the student to select one of the following two additional numeric (1 or 2) options that are available: * 
 				 */
@@ -78,6 +79,10 @@ public class SMSRunner {
 			else {
 				System.out.println("Wrong credentials, please try again");
 				System.exit(0);
+			}
+				}
+			catch(InputMismatchException e) {
+				e.getMessage();
 			}
 			
 	}
@@ -97,6 +102,7 @@ public class SMSRunner {
 				+ " 2. Logout \n");
 		
 		int choice = scan.nextInt();
+		try {
 		if(choice==1) {
 			System.out.println("Please choose from the following courses and type number corresponding to the course: ");
 			for(Course c:availableCourses) {
@@ -106,8 +112,12 @@ public class SMSRunner {
 			stService.registerStudentToCourse(st.getsEmail(), cId);
 		}
 		else {
-			System.out.println(st.getsName()+ "successfully, logged out");
+			System.out.println(st.getsName()+ " successfully, logged out");
 			System.exit(0);
+			}
+		}
+		catch(InputMismatchException e) {
+			e.getMessage();
 		}
 	}
 	

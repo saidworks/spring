@@ -17,7 +17,9 @@ import com.perscholas.jpa.entitymodels.Student;
 import com.perscholas.jpa.entitymodels.StudentCourse;
 
 public class StudentService implements StudentDAO {
-	private SessionFactory factory = new Configuration().configure().buildSessionFactory();
+	private SessionFactory factory  = new Configuration().configure().buildSessionFactory();;
+	private CourseService cService = new CourseService();;
+	
 	public StudentService() {
 		// TODO Auto-generated constructor stub
 	}
@@ -99,6 +101,7 @@ public class StudentService implements StudentDAO {
 			StudentCourse sc = new StudentCourse();
 			sc.setStCourseId(cId);
 			sc.setStEmail(sEmail);
+			System.out.printf("%20s %30s %20s\n" ,getStudentByEmail(sEmail).getsName()," successfully, registered to : ",cService.getAllCourses().get(cId-1).getcName());			
 			session.save(sc);
 		}
 		else {

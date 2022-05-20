@@ -1,7 +1,8 @@
 -- CREATE DATABASE sms;
- use SMS;
--- DROP TABLE IF EXISTS course,student;
-
+use SMS;
+-- DROP TABLE IF EXISTS student;
+-- DROP TABLE IF EXISTS course;
+-- DROP TABLE IF EXISTS student_course;
 
 -- -- Course Insertion commands 
 -- insert into Student (email, name, password) values ('hluckham0@google.ru', 'Hazel Luckham', 'X1uZcoIh0dj');

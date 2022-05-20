@@ -8,6 +8,7 @@ import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 
 
@@ -21,8 +22,7 @@ public class Student {
 	@Column(name="password")
 	private String sPass;
 	
-	@OneToMany(cascade=CascadeType.ALL,fetch = FetchType.EAGER)
-	@JoinColumn(name = "email")
+	@ManyToMany(targetEntity = Course.class,fetch = FetchType.EAGER,cascade=CascadeType.ALL)
 	private List<Course> sCourses;
 	
 	public Student() {
