@@ -101,8 +101,9 @@ public class SMSRunner {
 				+ " 1. Register to course \n"
 				+ " 2. Logout \n");
 		
-		int choice = scan.nextInt();
 		try {
+		int choice = scan.nextInt();
+		
 		if(choice==1) {
 			System.out.println("Please choose from the following courses and type number corresponding to the course: ");
 			for(Course c:availableCourses) {
@@ -119,8 +120,7 @@ public class SMSRunner {
 			}
 		}
 		catch(InputMismatchException e) {
-			e.getMessage();
-			System.out.println("Wrong entry please restart the app and try again");
+			System.out.println("Wrong choice please restart the app and try again");
 		}
 	}
 	
