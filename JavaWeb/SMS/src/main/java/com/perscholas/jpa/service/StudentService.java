@@ -101,8 +101,13 @@ public class StudentService implements StudentDAO {
 			StudentCourse sc = new StudentCourse();
 			sc.setStCourseId(cId);
 			sc.setStEmail(sEmail);
-			System.out.printf("%20s %30s %20s\n" ,getStudentByEmail(sEmail).getsName()," successfully, registered to : ",cService.getAllCourses().get(cId-1).getcName());			
-			session.save(sc);
+			try{
+			System.out.printf("%20s %30s %20s\n" ,getStudentByEmail(sEmail).getsName()," successfully, registered to : ",cService.getAllCourses().get(cId-1).getcName());
+			session.save(sc);}			
+			catch(IndexOutOfBoundsException e) {
+				System.out.println("No course has the id "+cId);
+			}
+			
 		}
 		else {
 			System.out.println(" Already registered to this course");

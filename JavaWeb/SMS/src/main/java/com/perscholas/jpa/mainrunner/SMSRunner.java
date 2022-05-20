@@ -108,8 +108,10 @@ public class SMSRunner {
 			for(Course c:availableCourses) {
 				System.out.printf("%30s %1s %30s %1s %30s\n",c.getcId(),'|',c.getcName(),'|', c.getcInstructorName());
 			}
+
 			int cId = scan.nextInt();
 			stService.registerStudentToCourse(st.getsEmail(), cId);
+			
 		}
 		else {
 			System.out.println(st.getsName()+ " successfully, logged out");
@@ -118,6 +120,7 @@ public class SMSRunner {
 		}
 		catch(InputMismatchException e) {
 			e.getMessage();
+			System.out.println("Wrong entry please restart the app and try again");
 		}
 	}
 	
