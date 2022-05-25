@@ -15,7 +15,8 @@ use SMS;
 -- insert into Student (email, name, password) values ('aiannitti7@is.gd', 'Alexandra Iannitti', 'TWP4hf5j');
 -- insert into Student (email, name, password) values ('ljiroudek8@sitemeter.com', 'Laryssa Jiroudek', 'bXRoLUP');
 -- insert into Student (email, name, password) values ('cjaulme9@bing.com', 'Cahra Jaulme', 'FnVklVgC6r6');
-insert into Student (email, name, password) values ('test@bing.com', 'Said Testing', '12345678');
+-- insert into Student (email, name, password) values ('test@bing.com', 'Said Testing', '12345678');
+
 -- DELETE FROM Student WHERE email="test@bing.com";
 
 -- insert into Course (id, name, instructor) values (1, 'English', 'Anderea Scamaden');

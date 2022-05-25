@@ -1,18 +1,30 @@
 package com.perscholas.jpa.service;
 
-import static org.hamcrest.CoreMatchers.isA;
+
 import static org.junit.Assert.*;
 
 import java.util.List;
 
+import org.junit.After;
+import org.junit.Before;
 import org.junit.Test;
 
 import com.perscholas.jpa.entitymodels.Course;
 import com.perscholas.jpa.entitymodels.Student;
 
 public class StudentServiceTest {
-	StudentService stService = new StudentService();
-	Student st = new Student("sbowden1@yellowbook.com","Sonnnie Bowden","SJc4aWSU",stService.getStudentCourses("sbowden1@yellowbook.com"));
+	StudentService stService;
+	Student st;
+	@Before 
+	public void setUp() {
+		stService = new StudentService();
+		st = new Student("sbowden1@yellowbook.com","Sonnnie Bowden","SJc4aWSU",stService.getStudentCourses("sbowden1@yellowbook.com"));
+	}
+	@After
+	public void tearDown() {
+		stService = null;
+		st = null;
+	}
 	
 	@Test
 	public void testGetAllStudents() {

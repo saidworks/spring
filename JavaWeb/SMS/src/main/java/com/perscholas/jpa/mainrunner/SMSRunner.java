@@ -45,10 +45,10 @@ public class SMSRunner {
 		1. Student: This allows the user to enter his/her email and password and check whether or not those credentials are valid, in order to log in. If the credentials are invalid the program should end with an appropriate message to the student.*/
 		int choice = 0;
 		try {
-		System.out.println("Welcome to School Management System \n "
-				+ "please choose from the following: \n"
-				+ " 1. Login \n"
-				+ " 2. Quit \n");
+		System.out.println("******************************************    Welcome to School Management System    ****************************************** \n \n"
+				+ "Please choose from the following: \n"
+				+ "\t 1. Login \n"
+				+ "\t 2. Quit \n");
 		choice = scan.nextInt();}
 		catch(InputMismatchException e) {
 			e.getMessage();
@@ -68,9 +68,13 @@ public class SMSRunner {
 				 */
 				st = stService.getStudentByEmail(email);
 				System.out.println("Welcome, " + st.getsName());
+				System.out.println();
 				List<Course> stCourses = stService.getStudentCourses(email);
-				System.out.println("You are registered to : ");
-				System.out.printf("%30s %1s %30s %1s %30s\n","Course ID",'|',"Course Name",'|', "Course Instructor");
+				if(stCourses.size()>0) {
+					System.out.println("You are registered to : ");
+					System.out.printf("%30s %1s %30s %1s %30s\n","Course ID",'|',"Course Name",'|', "Course Instructor");
+					}
+				
 				for(Course c:stCourses) {
 					System.out.printf("%30s %1s %30s %1s %30s\n",c.getcId(),'|',c.getcName(),'|', c.getcInstructorName());
 				}
@@ -113,10 +117,16 @@ public class SMSRunner {
 
 			int cId = scan.nextInt();
 			stService.registerStudentToCourse(st.getsEmail(), cId);
-			
+			stCourses = stService.getStudentCourses(st.getsEmail());
+			System.out.println(st.getsName()+"'s classes");
+			System.out.printf("%30s %1s %30s %1s %30s\n","Course ID",'|',"Course Name",'|', "Course Instructor");
+			for(Course c:stCourses) {
+				System.out.printf("%30s %1s %30s %1s %30s\n",c.getcId(),'|',c.getcName(),'|', c.getcInstructorName());
+			}
+			registerCourse();
 		}
 		else {
-			System.out.println(st.getsName()+ " successfully, logged out");
+			System.out.println(st.getsName()+ ", successfully logged out");
 			System.exit(0);
 			}
 		}
