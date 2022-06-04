@@ -23,7 +23,7 @@ public class HelloController {
 		return "hello/hello";
 	}
 	
-	@PostMapping("hello")
+	@PostMapping("/hello")
 	public String postRequest(@RequestParam("text1") String name,Model model) {
 		model.addAttribute("name",name);
 		
