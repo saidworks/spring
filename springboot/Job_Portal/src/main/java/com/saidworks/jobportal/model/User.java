@@ -1,6 +1,6 @@
 package com.saidworks.jobportal.model;
 
-import java.util.Optional;
+import java.io.Serializable;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -14,10 +14,16 @@ import javax.persistence.OneToOne;
 import lombok.Data;
 
 
+
 @Data // This tells Hibernate to make a table out of this class
 @Entity
-public class User {
-  @Id
+
+public class User implements Serializable{
+  /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+@Id
   @GeneratedValue(strategy = GenerationType.AUTO)
   private Integer id;
   @Column(name="first_name")

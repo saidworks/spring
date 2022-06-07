@@ -33,4 +33,4 @@
 SELECT *
 FROM teacherM;
 SELECT *
-FROM department;
+FROM department;student_coursestudent_course

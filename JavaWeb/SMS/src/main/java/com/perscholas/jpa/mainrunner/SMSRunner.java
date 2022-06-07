@@ -46,7 +46,7 @@ public class SMSRunner {
 		int choice = 0;
 		try {
 		System.out.println("******************************************    Welcome to School Management System    ****************************************** \n \n"
-				+ "Please choose from the following: \n"
+				+ "Dear Student,please choose from the following: \n"
 				+ "\t 1. Login \n"
 				+ "\t 2. Quit \n");
 		choice = scan.nextInt();}
